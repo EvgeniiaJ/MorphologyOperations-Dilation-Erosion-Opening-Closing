@@ -1,0 +1,64 @@
+          Project 4:
+          
+Implementation of the four basic Morphology Operations
+
+You will be given two images: 
+- Morphology_Img1.txt, 
+- Morphology_Img2.txt
+
+and two structuring elements: 
+- Morphology_StrucElem1.txt
+- Morphology_StrucElem2.txt
+
+*** Run your program four times using the following four tests:
+test-1: Morphology_Img1.txt and Morphology_StrucElem1.txt
+test-2: Morphology_Img1.txt and Morphology_StrucElem2.txt
+test-3: Morphology_Img2.txt and Morphology_StrucElem1.txt
+test-4: Morphology_Img2.txt and Morphology_StrucElem2.txt
+ 
+
+I. Inputs: There are two input files:
+
+    a)  imgFile (argv[1] / args[0]): a txt file representing a binary image with header information.
+    
+    b)  structFile (argv[2] / args[1]): a txt file representing a binary image of a structuring element with header and
+        the origin of the structuring element. The format of the structuring element is as follows:
+            - 1st text line are the four integer of the header; 
+            - 2nd text line is the position (w.r.t. index) of the origin of the structuring 
+                  element then follows by the rows and column of the structuring element.   
+
+
+For example (2-D structuring element):
+    5 5 0 1 // 5 rows, 5 columns, min is 0, max is 1: 
+    2 2     // origin is at row index 2 and column index 2.
+    0 0 1 0 0
+    0 0 1 0 0
+    1 1 1 1 1
+    0 0 1 0 0
+0 0 1 0 0
+
+** Note: when a structure element contains zeros, 
+only those 1’s to be used in dilation and erosion! 
+
+Another example (2-D structuring element):
+
+    3 3 1 1 // 3 rows, 3 columns, min is 1, max is 1: 
+    1 1     // origin is at row index 1 and column index 1.
+    1 1 1
+    1 1 1
+  	1 1 1
+
+Another example (1-D structuring element):
+
+    1 5 1 1 // 1 row, 5 columns, min is 1, max is 1: 
+    0 2     // origin is at row index 0 and column index 2.
+	1 1 1 1 1
+
+*******************************
+II. Outputs:
+	 
+	- dilateOutFile (argv[3] / args[2]): the result of dilation image with header, the same dimension as imgFile     
+	- erodeOutFile (args[4] / args[3]): the result of erosion image with header, the same dimension as imgFile     
+    	- closingOutFile (args[5] / args[4]): the result of closing image with header, the same dimension as imgFile     
+    	- openingOutFile (args[6] / args[5]): the result of opening image with header, the same dimension as imgFile     
+	- prettyPrintFile (args[7] / args[6]): pretty print which are stated in the algorithm steps

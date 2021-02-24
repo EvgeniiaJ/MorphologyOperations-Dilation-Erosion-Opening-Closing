@@ -26,6 +26,19 @@ Image::Image(ifstream& input1, ifstream& input2){
 	initializeArrays();
 }
 
+Image::~Image(){
+	for (int i = 0; i < (this->imageRows + this->extraRows); i++) {
+		delete[] zeroFramedArray[i];
+		delete[] morphologyArray[i];
+		if (i < this->structRows) {
+			delete[] structuringElement[i];
+		}
+	}
+	delete[] zeroFramedArray;
+	delete[] morphologyArray;
+	delete[] structuringElement;
+}
+
 void Image::initializeArrays() {
 
 	zeroFramedArray = new int*[this->imageRows + this->extraRows];

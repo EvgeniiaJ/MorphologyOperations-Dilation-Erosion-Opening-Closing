@@ -37,6 +37,8 @@ public:
 
 	Image(ifstream& input1, ifstream& input2);
 	
+	~Image();
+	
 	void initializeArrays();
 
 	void loadImage(ifstream&, int**);

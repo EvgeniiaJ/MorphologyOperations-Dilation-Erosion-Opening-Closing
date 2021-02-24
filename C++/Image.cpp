@@ -109,6 +109,11 @@ void Image::computeErosion(int** zeroFramedArray, int** morphologyArray) {
 			}
 		}
 	}
+	
+	for (int i = 0; i < (this->imageRows + this->extraRows); i++) {
+		delete[] tempArray[i]; 
+	}
+	delete[] tempArray;
 }
 
 void Image::computeOpening(int** zeroFramedArray, int** morphologyArray) {
@@ -122,6 +127,11 @@ void Image::computeOpening(int** zeroFramedArray, int** morphologyArray) {
 		}
 	}
 	opening(zeroFramedArray, morphologyArray, tempArray);
+	
+	for (int i = 0; i < (this->imageRows + this->extraRows); i++) {
+		delete[] tempArray[i]; 
+	}
+	delete[] tempArray;
 }
 
 void Image::computeClosing(int** zeroFramedArray, int** morphologyArray) {

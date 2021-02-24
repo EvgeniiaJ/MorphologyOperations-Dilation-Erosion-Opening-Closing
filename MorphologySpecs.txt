@@ -46,15 +46,15 @@ Another example (2-D structuring element):
     1 1     // origin is at row index 1 and column index 1.
     1 1 1
     1 1 1
-  	1 1 1
+    1 1 1
 
 Another example (1-D structuring element):
 
     1 5 1 1 // 1 row, 5 columns, min is 1, max is 1: 
     0 2     // origin is at row index 0 and column index 2.
-	1 1 1 1 1
+    1 1 1 1 1
 
-*******************************
+
 II. Outputs:
 	 
 	- dilateOutFile (argv[3] / args[2]): the result of dilation image with header, the same dimension as imgFile     
